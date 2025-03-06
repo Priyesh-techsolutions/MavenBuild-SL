@@ -11,8 +11,8 @@ jobs:
          - name: install java and maven on the ubuntu server 
            uses: actions/setup-java@v3 
            with:  
-               distribution: ‘temurin’ 
-               java-version: ‘11’ 
-               cache: ‘maven’ 
+               distribution: 'temurin' 
+               java-version: '11' 
+               cache: 'maven' 
          - name: build the source code on ubuntu server 
            run: mvn package 
