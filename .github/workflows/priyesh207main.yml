@@ -1,0 +1,18 @@
+name: cicd using maven and jenkins 
+on:  
+  push: 
+  workflow_dispatch: 
+jobs: 
+  cicd:  
+      runs-on: ubuntu-latest 
+      steps:  
+         - name: clone the repo on the ubuntu server 
+           uses: actions/checkout@v4 
+         - name: install java and maven on the ubuntu server 
+           uses: actions/setup-java@v3 
+           with:  
+               distribution: ‘temurin’ 
+               java-version: ‘11’ 
+               cache: ‘maven’ 
+         - name: build the source code on ubuntu server 
+           run: mvn package 
